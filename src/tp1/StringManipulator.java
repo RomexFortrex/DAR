@@ -1,3 +1,5 @@
+//Travail réalisé par Jami Seif Allah et Hachaichi Asma
+
 package tp1;
 
 public class StringManipulator {
