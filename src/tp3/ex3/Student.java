@@ -7,11 +7,17 @@ public class Student extends Thread{
         super(s);
         this.isiSandwich = isiSandwich;
     }
-
     @Override
     public void run() {
         System.out.println("Student "+this.getName()+" is waiting for a sandwich");
         //todo : wait for a sandwich until it's prepared
+            synchronized (isiSandwich){
+                try {
+                    isiSandwich.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         System.out.println("Student "+this.getName()+" got a sandwich");
     }
 }
