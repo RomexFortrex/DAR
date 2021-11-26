@@ -10,7 +10,6 @@ public class Student extends Thread{
     @Override
     public void run() {
         System.out.println("Student "+this.getName()+" is waiting for a sandwich");
-        //todo : wait for a sandwich until it's prepared
             synchronized (isiSandwich){
                 try {
                     isiSandwich.wait();
